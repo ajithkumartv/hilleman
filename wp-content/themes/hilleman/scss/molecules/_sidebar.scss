@@ -1,0 +1,158 @@
+.hilleman-sidebar {
+    background-color: $color-blue-dark;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        left: -5000px;
+        top: 0;
+        width: calc(100% + 5000%);
+        height: 100%;
+        background-color: $color-blue-dark;
+    }
+    &__logo-wrapper {
+        padding: $spacer-3 $spacer-0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            left: -3000%;
+            bottom: 0px;
+            width: calc(100% + 4000%);
+            height: 1px;
+            background-color: $color-white;
+        }
+    }
+    &__logo {
+        .hl-header__logo {
+            width: 150px;
+            height: 42px;
+        }
+    }
+    &__dashboard-section {
+        padding: $spacer-4 $spacer-0;
+    }
+    &__dashboard-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: $spacer-4;
+        z-index: 1;
+    }
+    &__dashboard-txt {
+        display: flex;
+        align-items: center;
+        position: relative;
+        font-weight: $font-semi-bold;
+        &.nav-link.active {
+            background-color: $color-blue-dark;
+            padding-left: $spacer-0;
+            &::before {
+                content: "";
+                position: absolute;
+                left: -3000px;
+                top: 0;
+                width: 3030px;
+                height: 100%;
+                background-color: $color-white;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+        }
+    }
+    &__dashboard-inner {
+        flex-direction: column;
+    }
+    &__person-icon {
+        width: 30px;
+        height: 30px;
+    }
+    &__person-dropdown {
+        background-color: $color-white;
+    }
+    &__person {
+        padding-right: $spacer-4;
+        position: relative;
+        cursor: pointer;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            right: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.14286 6.25L0.936449 0.785715L9.34927 0.785714L5.14286 6.25Z' fill='%23D9DEE2'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: all .3s;
+            transform: translate(-5px, 12px) rotate( 0deg);
+        }
+        &.active {
+            &::after {
+                transform: translate(-5px, 5px) rotate( 180deg);
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                right: 33px;
+                top: 31px;
+                width: 0;
+                height: 0;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-bottom: 8px solid #fff;
+            }
+        }
+    }
+    &__person-dropdown {
+        background-color: $color-white;
+        position: absolute;
+        right: 10px;
+        z-index: 1;
+        top: 38px;
+        min-width: 110px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: all .3s;
+        box-shadow: 2px 2px 5px rgba(27, 33, 54, 0.16);
+        &.active {
+            max-height: 200px;
+            overflow: visible;
+        }
+    }
+    &__dropdown-txt {
+        color: $color-black;
+        font-weight: $font-bold;
+        padding: $spacer-2 $spacer-3;
+        display: block;
+        &:hover {
+            color: $color-white;
+            background-color: $color-green-2;
+        }
+    }
+}
+
+@include desktop {
+    .hilleman-sidebar {
+        &::before {
+            width: 5010px;
+        }
+        &__person {
+            display: none;
+        }
+        &__logo {
+            .hl-header__logo {
+                width: 220px;
+                height: 53px;
+            }
+        }
+        &__logo-wrapper {
+            &::after {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}

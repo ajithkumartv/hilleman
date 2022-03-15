@@ -1,0 +1,44 @@
+.hl-btn {
+    color: $color-green-2;
+    font-weight: $font-bold;
+    display: inline-flex;
+    align-items: center;
+    svg {
+        width: 20px;
+        height: 20px;
+        margin-left: $spacer-2;
+        transition: 0.3s;
+    }
+    &:hover {
+        color: $color-green-2;
+        svg {
+            transform: translateX(5px);
+            circle {
+                fill: $color-green-2;
+            }
+            path {
+                stroke: $color-white;
+            }
+        }
+    }
+    &--green {
+        color: $color-green;
+        svg {
+            circle,
+            path {
+                stroke: $color-green;
+            }
+        }
+        &:hover {
+            color: $color-green;
+            svg {
+                circle {
+                    fill: $color-green;
+                }
+                path {
+                    stroke: $color-white;
+                }
+            }
+        }
+    }
+}

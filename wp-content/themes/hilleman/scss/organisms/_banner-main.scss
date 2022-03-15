@@ -1,0 +1,172 @@
+.hl-banner {
+    &.slick-slider {
+        margin-bottom: $spacer-0;
+    }
+    &__item {
+        position: relative;
+        min-height: 500px;
+    }
+    &__img-sec {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &::after {
+            content: '';
+            position: absolute;
+            background: linear-gradient(180deg, #1B2136 8.36%, rgba(27, 33, 54, 0) 100%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+        }
+    }
+    &__inner {
+        position: relative;
+        padding-top: 100px;
+        .hl-btn {
+            font-size: 18px;
+            color: $color-white;
+        }
+    }
+    &__content {
+        max-width: 500px
+    }
+    &__head {
+        font-size: 26px;
+        color: $color-green;
+        font-weight: $font-bold;
+        margin-bottom: $spacer-4;
+    }
+    &__head-sub {
+        font-size: 18px;
+        color: $color-white;
+        font-weight: $font-semi-bold;
+        display: block;
+    }
+    &__nav-wrapper {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        .content-wrapper {
+            display: flex;
+        }
+    }
+    &__nav-outer {
+        display: inline-flex;
+        align-items: center;
+        background-color: $color-green-2;
+    }
+    &__nav {
+        padding: $spacer-2 12px;
+        cursor: pointer;
+        img {
+            width: 8px;
+            display: block;
+        }
+    }
+    &__prev {
+        position: relative;
+        &::after {
+            content: "";
+            width: 1px;
+            height: 15px;
+            background-color: $color-white;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+    // Slick settings
+    .slick-dots {
+        bottom: 75px;
+        left: $spacer-3;
+        width: 2px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.5);
+        align-items: center;
+        li {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            flex: 1;
+            button {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                &::before {
+                    content: none;
+                }
+            }
+        }
+        .slick-active {
+            width: 4px;
+            background-color: $color-white;
+        }
+    }
+}
+
+@include tablet {
+    .hl-banner {
+        &__item {
+            min-height: 450px;
+        }
+        .slick-dots {
+            left: $spacer-5;
+        }
+    }
+}
+
+@include desktop {
+    .hl-banner {
+        &__item {
+            display: flex;
+            align-items: center;
+            &.slick-slide {
+                display: flex;
+            }
+        }
+        &__inner {
+            padding-top: 60px;
+            .hl-btn {
+                font-size: 24px;
+                svg {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+        &__head {
+            font-size: 48px;
+            margin-bottom: $spacer-5;
+            &--adjust-text{
+                font-size: 36px; 
+            }
+        }
+        &__head-sub {
+            font-size: 30px;
+        }
+        &__nav {
+            padding: $spacer-2 $spacer-3;
+            cursor: pointer;
+            img {
+                width: 10px;
+                display: block;
+            }
+        }
+        // Slick settings
+        .slick-dots {
+            left: auto;
+            right: $spacer-5;
+            bottom: 50%;
+            transform: translateY(50%);
+            margin-left: $spacer-0;
+            height: 150px;
+        }
+    }
+}

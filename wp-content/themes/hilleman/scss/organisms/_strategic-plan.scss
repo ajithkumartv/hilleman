@@ -1,0 +1,15 @@
+.hl-strategic{
+    &__header{
+    font-size: 32px;
+    margin: $spacer-4 $spacer-0;
+    text-align: center;
+    font-weight: bold;
+    span{
+        color: $color-green-2;
+    }
+    } 
+    &__body{
+        color: $color-grey;
+        margin-bottom: $spacer-3;
+    }
+}

@@ -1,0 +1,92 @@
+.hl-header {
+    background-color: rgba(27, 33, 54, 0.9);
+    border-top: 1px solid #6E727F;
+    border-bottom: 1px solid #6E727F;
+    &__menu {
+        overflow: hidden;
+        position: fixed;
+        left: 0;
+        top: 89px;
+        background-color: #000;
+        width: 100%;
+    }
+    &__menu-inner {
+        display: flex;
+    }
+    &__level1 {
+        width: 25%;
+        max-width: 400px;
+        border-right: 1px solid #6E727F;
+    }
+    &__level2 {
+        width: 75%;
+        padding-left: $spacer-5;
+        .tab-pane {
+            &.active {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+    &__menu-sub,
+    &__menu-link {
+        font-size: 18px;
+        color: $color-white;
+        padding: $spacer-2 $spacer-0;
+    }
+    &__menu-sub {
+        border-bottom: 1px solid #6E727F;
+        position: relative;
+        &::before {
+            content: "";
+            width: 5000px;
+            height: calc(100% + 1px);
+            border-bottom: 1px solid #6E727F;
+            position: absolute;
+            bottom: -1px;
+            left: -5000px;
+        }
+        &:last-child {
+            border-bottom: 0px;
+            &::before {
+                border-bottom: 0px;
+                height: 100%;
+                bottom: 0;
+            }
+        }
+        svg {
+            width: 6px;
+            height: 12px;
+            margin-left: $spacer-2;
+            path {
+                stroke: $color-white;
+            }
+        }
+        &:hover,
+        &.active {
+            background-color: $color-white;
+            color: #1B2136;
+            svg {
+                path {
+                    stroke: #1B2136;
+                }
+            }
+            &::before {
+                background-color: $color-white;
+            }
+        }
+        &.active {
+            font-weight: $font-Extra-bold;
+            svg {
+                path {
+                    stroke-width: 2px;
+                }
+            }
+        }
+    }
+    &__menu-link {
+        &:hover {
+            color: $color-green;
+        }
+    }
+}

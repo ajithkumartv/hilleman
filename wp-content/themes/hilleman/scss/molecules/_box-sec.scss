@@ -1,0 +1,126 @@
+.hl-box-sec {
+	padding-bottom: 32px;
+    &__circle-wrapper{
+        display: block;
+    }
+    &__circle-tile{
+        display: flex;
+        width: 100%;
+        margin-bottom: $spacer-4;
+    }
+    &__image{
+        width: 100%;
+        min-height: 200px;
+        background-size: cover;
+    }
+    &__cnt{
+        margin: $spacer-3 $spacer-0 $spacer-5;
+        .hl-tile-h{
+            &__cnt-desk{
+                margin-bottom: $spacer-0;
+            }
+            &__cnt-head{
+                margin-bottom: $spacer-2;
+            }
+        }
+    }
+    &__circle-icon{
+        width: 84px;
+        height: 84px;
+    }
+    &__circle-cont{
+        margin: $spacer-2 $spacer-4;
+    }
+    &__circle-head{
+        font-size: 20px;
+        line-height: 24px;
+        color: #000;   
+        margin-bottom: $spacer-3; 
+    }
+    &__circle-body{
+        color: #858585;
+    }
+}
+
+@include tablet-desktop {
+    .hl-box-sec {
+		padding-bottom: 32px;
+        &__circle-tile{
+            display: flex;
+            width: 50%;
+            margin-bottom: $spacer-4;
+        }
+        &__wrap:last-child{
+            margin-left: $spacer-0;
+            margin-top: $spacer-5;
+        }
+        &__wrap-sec{
+            display: flex;
+            &--rev{
+                flex-direction: row-reverse;
+                .hl-box-sec__cnt{
+                    &::after{
+                        border-top: 0px;
+                        border-right: 0px;
+                        border-left: 1px solid $color-green-2;
+                        border-bottom: 1px solid $color-green-2;
+                        left: 0;
+                        bottom: 0;
+                        top: unset;
+                    }
+                }
+            }
+        }
+        &__image{
+            width: 50%;
+        }
+        &__cnt{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            padding: $spacer-3 $spacer-4;
+            margin: $spacer-0;
+            position: relative;
+            &::after{
+                content: '';
+                width: 45px;
+                height: 45px;
+                top: 0;
+                right: 0px;
+                border-top: 1px solid $color-green-2;
+                border-right: 1px solid $color-green-2;
+                position: absolute;
+            }
+        }
+        &__cnt-head{
+            margin-bottom: $spacer-3;
+        }
+        &__circle-tile{
+            display: flex;
+            width: calc(50% - 16px);
+            margin: $spacer-0 $spacer-2 $spacer-5;
+        }
+        &__circle-wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            margin: $spacer-0 (-$spacer-2);
+        }
+    }
+}
+
+@include desktop{
+    .hl-box-sec {
+        display: flex;
+        &__wrap{
+            flex: 1;
+            &:last-child{
+                margin-left: $spacer-6;
+                margin-top: $spacer-0;
+            }
+        }
+        &__circle-cont{
+            margin: $spacer-0 $spacer-0 $spacer-0 $spacer-3;
+        }
+    }
+}

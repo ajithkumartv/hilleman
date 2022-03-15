@@ -1,0 +1,15 @@
+.hl-heading {
+    font-size: 28px;
+    font-weight: $font-Extra-bold;
+    margin-bottom: $spacer-4;
+    span {
+        color: $color-green-2;
+    }
+}
+
+@include tablet-desktop {
+    .hl-heading {
+        font-size: 32px;
+        margin-bottom: $spacer-5;
+    }
+}

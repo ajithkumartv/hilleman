@@ -1,0 +1,154 @@
+.hl-pro-disc-tile{
+    margin: $spacer-5 $spacer-0;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        text-align: center;
+       margin: $spacer-4 $spacer-0;
+    }
+    &__profile-wrapper{
+        width: 100%;
+    }
+    &__profile-heading{
+        color: $color-black;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: bold;
+        padding: $spacer-3 $spacer-0;
+    }
+    &__profile-body{
+        color: $color-grey;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    &__profile-img-sec{
+        position: relative;
+        display: inline-block;
+        &::after{
+            content: '';
+            width: 45px;
+            height: 45px;
+            bottom: -8px;
+            right: -8px;
+            border-bottom: 1px solid $color-green-2;
+            border-right: 1px solid $color-green-2;
+            position: absolute;
+        }
+    }
+    &__profile-img{
+        width: 250px;
+        height: 250px;
+    }
+    &__pro-cont-wrapper{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: $spacer-3;
+        margin-top: $spacer-5;
+    }
+    &__pro-cont-sec{
+        position: relative;
+        color: $color-grey;
+        font-style: italic;
+        &::after{
+            content: '';
+            background-image: url(../images/right-quotes.png);
+            width: 55px;
+            height: 37px;
+            background-size: 55px 37px;
+            position: absolute;
+            bottom: -30px;
+            right: 0px;
+        }
+        &::before{
+            content: '';
+            background-image: url(../images/left-quotes.png);
+            width: 55px;
+            height: 37px;
+            background-size: 55px 37px;
+            position: absolute;
+            top: -30px;
+            left: 0px;
+        }
+    }
+}
+@include tablet-desktop{
+    .hl-pro-disc-tile{
+        &__wrapper{
+            flex-direction: row;
+            text-align: unset;
+            &--rev{
+                flex-direction: row-reverse;
+            }
+        }
+        &__profile-wrapper{
+            width: 60%;
+            &--rightside{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+        }
+        &__profile-img{
+            width: 154px;
+            height: 154px;
+        }
+        &__pro-cont-wrapper{
+            padding: $spacer-3 80px;
+            margin-top: $spacer-0;
+        }
+        &__profile-body{
+            &--right{
+                text-align: right;
+            }
+        }
+        &__pro-cont-sec{
+            &::after{
+                content: '';
+                background-image: url(../images/right-quotes.png);
+                width: 90px;
+                height: 61px;
+                background-size: 90px 61px;
+                bottom: -40px;
+                right: -55px;
+            }
+            &::before{
+                content: '';
+                background-image: url(../images/left-quotes.png);
+                width: 90px;
+                height: 61px;
+                background-size: 90px 61px;
+                top: -50px;
+                left: -75px;
+            }
+        }
+    }
+}
+@include desktop{
+    .hl-pro-disc-tile{
+        &__profile-wrapper{
+            width: 35%;
+        }
+        &__pro-cont-sec{
+            &::after{
+                content: '';
+                background-image: url(../images/right-quotes.png);
+                width: 115px;
+                height: 78px;
+                background-size: 115px 78px;
+                top: 25px;
+                right: -55px;
+            }
+            &::before{
+                content: '';
+                background-image: url(../images/left-quotes.png);
+                width: 115px;
+                height: 78px;
+                background-size: 115px 78px;
+                top: -50px;
+                left: -75px;
+            }
+        }
+    }
+}

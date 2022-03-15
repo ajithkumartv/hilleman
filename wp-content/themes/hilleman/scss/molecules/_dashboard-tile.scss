@@ -1,0 +1,56 @@
+.dashboard-tile {
+    border: 1px solid #EAEAEA;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacer-3 $spacer-2;
+    background-color: $color-white;
+    position: relative;
+    &:hover {
+        color: $color-green-2;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, .16);
+    }
+    &__icon {
+        width: 55px;
+        height: 55px;
+    }
+    &__txt {
+        font-weight: $font-bold;
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: $spacer-3;
+        text-align: center;
+    }
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@include mobile {
+    .dashboard-tile {
+        &__txt {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+}
+
+@include desktop {
+    .dashboard-tile {
+        padding: $spacer-4 $spacer-3;
+        &__txt {
+            font-size: 18px;
+            line-height: 24px;
+            margin-top: $spacer-4;
+        }
+        &__icon {
+            width: 70px;
+            height: 70px;
+        }
+    }
+}

@@ -1,0 +1,128 @@
+.hl-Capabilities {
+    padding: $spacer-5 $spacer-0;
+    &__slider {
+        margin: $spacer-0 (-$spacer-2);
+        &::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            bottom: 0;
+            left: 8px;
+            border-bottom: 1px solid $color-green-2;
+            border-left: 1px solid $color-green-2;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            bottom: 0;
+            right: 8px;
+            border-bottom: 1px solid $color-green-2;
+            border-right: 1px solid $color-green-2;
+        }
+        &.slick-dotted {
+            margin-bottom: $spacer-0;
+        }
+        .slick-dots {
+            bottom: 24px;
+            text-align: right;
+            padding-right: $spacer-6;
+            li {
+                width: 25px;
+                height: 2px;
+                margin: $spacer-0;
+                button {
+                    padding: $spacer-0;
+                    width: 25px;
+                    height: 2px;
+                    background-color: rgba(37, 155, 151, 0.5);
+                    margin: $spacer-0;
+                    &::before {
+                        display: none;
+                    }
+                }
+                &.slick-active {
+                    height: 4px;
+                    button {
+                        height: 4px;
+                        background-color: #259B97;
+                    }
+                }
+            }
+        }
+        .hl-tile-h {
+            margin: $spacer-0 $spacer-2;
+            &__cnt {
+                padding-bottom: 50px;
+            }
+        }
+    }
+    .hl-tile-with-bg {
+        margin-top: $spacer-4;
+    }
+}
+
+@include tablet {
+    .hl-Capabilities {
+        &__slider {
+            &::after {
+                right: 8px;
+            }
+            &::before {
+                right: 8px;
+            }
+        }
+    }
+}
+
+@include tablet-desktop {
+    .hl-Capabilities {
+        padding: $spacer-6 $spacer-0;
+        &__slider {
+            &::after {
+                width: 45px;
+                height: 45px;
+                top: 0;
+                left: auto;
+                border-top: 1px solid $color-green-2;
+                border-right: 1px solid $color-green-2;
+                border-left: 0;
+                border-bottom: 0;
+            }
+            &::before {
+                width: 45px;
+                height: 45px;
+            }
+            .slick-slide {
+                display: flex;
+            }
+            .slick-dots {
+                padding-right: 70px;
+            }
+        }
+    }
+}
+
+@include desktop {
+    .hl-Capabilities {
+        &__outer {
+            display: flex;
+        }
+        &__slider {
+            width: calc(70% + 16px);
+            padding-right: $spacer-5;
+            &::after {
+                right: 40px;
+            }
+            &::before {
+                right: 40px;
+            }
+        }
+        .hl-tile-with-bg {
+            width: 30%;
+            margin-top: $spacer-0;
+        }
+    }
+}

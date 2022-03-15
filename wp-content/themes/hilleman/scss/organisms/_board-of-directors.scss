@@ -1,0 +1,45 @@
+.hl-board-directors {
+    padding: $spacer-5 $spacer-0 $spacer-4;
+    .hl-heading {
+        text-align: center;
+    }
+    &__desk {
+        text-align: center;
+        margin-bottom: $spacer-3;
+        color: $color-grey;
+    }
+    &__outer {
+        display: flex;
+        flex-wrap: wrap;
+        margin: $spacer-0 (-$spacer-3);
+    }
+    .hl-tile-director {
+        width: 100%;
+        margin: $spacer-2 $spacer-3;
+    }
+}
+
+@include tablet {
+    .hl-board-directors {
+        .hl-tile-director {
+            width: calc(33.33% - 32px);
+        }
+    }
+}
+
+@include tablet-desktop {
+    .hl-board-directors {
+        padding: $spacer-6 $spacer-0 $spacer-4;
+        .hl-tile-director {
+            margin: $spacer-3;
+        }
+    }
+}
+
+@include desktop {
+    .hl-board-directors {
+        .hl-tile-director {
+            width: calc(25% - 32px);
+        }
+    }
+}

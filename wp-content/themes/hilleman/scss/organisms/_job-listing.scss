@@ -1,0 +1,91 @@
+.hl-job-listing {
+    &__banner {
+        margin-bottom: $spacer-4;
+    }
+    .hl-heading {
+        text-align: center;
+    }
+    &__tile-wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__tile {
+        width: 100%;
+        margin: $spacer-0 $spacer-0 $spacer-3;
+        &:last-child {
+            margin-bottom: $spacer-4;
+        }
+    }
+    &__tile-strip {
+        background-color: $color-green-2;
+        text-align: right;
+        padding: $spacer-2 $spacer-3;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            background-image: url(../images/star-icon.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100px;
+            height: 100%;
+            top: 0px;
+            left: 50%;
+            transform: translate(-50%, 0px);
+            opacity: .5;
+        }
+    }
+    &__tile-contents {
+        text-align: center;
+        padding: $spacer-4 $spacer-3;
+        border: 1px solid #EDEDED;
+        margin-top: -1px;
+        &:hover {
+            border: 1px solid $color-green-2;
+        }
+    }
+    &__tile-head {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: $font-bold;
+        margin-bottom: $spacer-2;
+    }
+    &__tile-sub-head {
+        font-weight: $font-regular;
+        margin-bottom: $spacer-4;
+    }
+    &__tile-icon {
+        width: 19px;
+        height: 22px;
+    }
+    &__share-link {
+        display: inline-block;
+    }
+}
+
+@include tablet-desktop {
+    .hl-job-listing {
+        &__tile-wrap {
+            margin-left: -$spacer-3;
+            margin-right: -$spacer-3;
+        }
+        &__tile {
+            width: calc(50% - 32px);
+            margin: $spacer-0 $spacer-3 $spacer-5;
+            &:last-child {
+                margin-bottom: $spacer-5;
+            }
+        }
+    }
+}
+
+@include desktop {
+    .hl-job-listing {
+        &__banner {
+            margin-bottom: $spacer-5;
+        }
+        &__tile {
+            width: calc(33.33% - 32px);
+        }
+    }
+}

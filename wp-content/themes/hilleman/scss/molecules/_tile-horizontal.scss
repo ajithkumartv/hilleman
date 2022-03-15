@@ -1,0 +1,46 @@
+.hl-tile-h {
+    // display: flex;
+    &__img {
+        // width: 60%;
+        height: 230px;
+    }
+    &__cnt {
+        // width: 40%;
+        padding: $spacer-3 $spacer-0;
+    }
+    &__cnt-desk {
+        color: $color-grey;
+        margin-bottom: $spacer-4;
+    }
+    &__cnt-head{
+        font-size: 28px;
+        line-height: 32px;
+        color: #000;
+        margin-bottom: $spacer-3;
+    }
+}
+
+@include tablet {
+    .hl-tile-h {
+        &__img {
+            width: 50%;
+        }
+        &__cnt {
+            width: 50%;
+        }
+    }
+}
+
+@include tablet-desktop {
+    .hl-tile-h {
+        display: flex;
+        &__img {
+            width: 60%;
+            height: auto;
+        }
+        &__cnt {
+            width: 40%;
+            padding: $spacer-4;
+        }
+    }
+}

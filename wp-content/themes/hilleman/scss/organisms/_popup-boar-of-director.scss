@@ -1,0 +1,73 @@
+.hl-director-modal {
+    .modal-dialog {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: $spacer-3;
+    }
+    .modal-content {
+        border: 0;
+        border-radius: 0;
+    }
+    .modal-body {
+        padding: $spacer-4 $spacer-3;
+    }
+    &__profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: $spacer-4;
+    }
+    .hl-tile-director {
+        &__cnt {
+            align-items: flex-start;
+            padding: $spacer-2;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: calc(100% + 75px);
+                height: 100%;
+                border: 1px solid $color-green-2;
+            }
+        }
+        &__name {
+            margin-bottom: $spacer-2;
+        }
+        &__details {
+            min-height: auto;
+            margin-bottom: $spacer-0;
+            color: $color-black;
+        }
+    }
+    &__desk {
+        color: $color-grey;
+        margin-bottom: $spacer-3;
+        &:last-child {
+            margin-bottom: $spacer-0;
+        }
+    }
+    .btn-close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L14 14M14 1L1 14' stroke='%23259B97'/%3E%3C/svg%3E%0A");
+        opacity: 1;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+@include tablet-desktop {
+    .hl-director-modal {
+        .modal-body {
+            padding: $spacer-5;
+        }
+        .hl-tile-director {
+            &__cnt {
+                padding: $spacer-3 $spacer-4;
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+.hl-banner {
+    &--inner{
+        .hl-banner{
+            &__item{
+                display: flex;
+                align-items: center;
+                min-height: 300px;
+            }
+            &__inner{
+                padding-top: $spacer-3;
+            }
+            &__head{
+                color: $color-white;
+                margin-bottom: $spacer-0;
+                &--adjust{
+                    max-width: 220px;
+                }
+            }
+        }
+    }
+}
+@include tablet-desktop{
+    .hl-banner {
+        &--inner{
+            .hl-banner{
+                &__head{
+                    &--adjust{
+                        max-width: 260px;
+                    } 
+                }
+            }
+        }
+        
+    }
+}
+@include tablet{
+    .hl-banner {
+        &--inner{
+            .hl-banner{
+                &__head{
+                    &--adjust{
+                        max-width: 420px;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+@include desktop{
+    .hl-banner {
+        &--inner{
+            .hl-banner{
+                &__item{
+                    min-height: 400px;
+                }
+                &__head{
+                    color: $color-white;
+                    margin-bottom: $spacer-0;
+                    &--adjust{
+                        max-width: unset;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+@include ie-fix{
+    .hl-banner {
+        &--inner{
+            .hl-banner__item{
+                min-height: 400px;
+            }
+        }
+    }
+}
